@@ -46,7 +46,8 @@
 
     <!-- Checkbox --> 
     <label for="name">13. Proior Losses Past 3 Years</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Indent -->
     <label for="email">a. If Yes, please describe and include a loss run report</label>
@@ -65,7 +66,13 @@
 
     <!-- Dropdown -->
     <label for="message">2. Location Operations</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <select name="myDropdownName" id="myDropdown">
+      <option value="option1">Office</option>
+      <option value="option2">Warehouse</option>
+      <option value="option3">Habitational</option>
+      <option value="option2">Retail</option>
+      <option value="option3">Other</option>
+    </select>
 
     <label for="name">a. If other, describe</label>
     <input type="text" id="name" name="name" required><br><br>
@@ -89,18 +96,30 @@
 
     <!-- Checkbox -->
     <label for="email">6. Do you own the building?</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <label for="message">7. Number of stories in the building</label><br>
     <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
 
     <!-- Dropdown -->
     <label for="message">8. Building Construction</label>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <select name="myDropdownName" id="myDropdown">
+      <option value="option1">Frame</option>
+      <option value="option2">Brick/Joisted Masonry</option>
+      <option value="option3">Masonry Non-Combustible</option>
+      <option value="option2">Fire Resistive</option>
+      <option value="option3">Non-Combustible</option>
+      <option value="option3">Other</option>
+    </select>
+
+    <label for="name">a. If other:</label>
+    <input type="text" id="name" name="name" required><br><br>
 
     <!-- Checkbox -->
     <label for="name">9. Does building have a sprinkler system?</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <label for="email">10. Requested Insurance Limits for:</label>
     <label for="email">a. Business Personal Property (Contents)</label>
@@ -124,7 +143,8 @@
 
     <!-- Checkbox -->
     <label for="message">1. Do you require limits higher than shown above?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Indent -->
     <label for="name">a. If yes, please advise desired limits:</label>
@@ -132,7 +152,8 @@
 
     <!-- Checkbox -->
     <label for="email">Do you offer employee benefits?</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <h2>SECTION 4: AUTOMOTIVE LIABILITY INFORMATION</h2>
 
@@ -141,11 +162,13 @@
 
     <!-- Checkbox -->
     <label for="message">Hied & Non-Owned Auto</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="message">Hired Auto Physical Damage</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <h3>Deductibles</h3>
     <h3>Comprehensive $500</h3>
@@ -153,7 +176,8 @@
 
     <!-- Checkbox -->
     <label for="name">1. Does your Company own any autos or trailers?</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Indent -->
     <label for="email">a. If “yes”, please provide the below information</label>
@@ -176,7 +200,8 @@
 
     <!-- Checkbox -->
     <label for="message">2. Does your Company have any Drivers?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <label for="name">a. If “yes”, please provide the below information</label>
     <label for="email">Number of Drivers</label>
@@ -227,7 +252,8 @@
 
     <!-- Checkbox A/B-->
     <label for="message">1. Select desired Workers’ Compensation limits</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Option A</label>
+    <label><input type="checkbox" class="radio" value="1"/>Option B</label>
 
     <label for="name">Rating Information:</label>
     <label for="email">State</label>
@@ -246,35 +272,43 @@
 
     <!-- Checkbox -->
     <label for="name">3. Do you lease any employees?</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="email">4. Do you lease employees to other employers?</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="message">5. Are any employees leased from a PEO (Professional Employment Organization)?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="name">6. Does the company have any seasonal/temporary employees?</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="email">7. Do employees ever travel outside of the United States or its territories for work?</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="message">8. Have you had any prior Workers’ Compensation losses?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="name">9. Has the company had any prior coverage cancelled or non-renewed in the past 5 years?</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Checkbox -->
     <label for="email">10. As owner/officer in your LLC/Corporation, do you wish to be included for coverage in this new Workers’ Compensation policy?</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <label for="message">11. What is your current experience modification factor if applicable?</label><br>
     <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
@@ -287,7 +321,8 @@
 
     <!-- Checkbox -->
     <label for="message">1. Do you require Umbrella Liability that differs from the above Limits?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
+    <label><input type="checkbox" class="radio" value="1"/>No</label>
 
     <!-- Indent -->
     <label for="name">a. If “yes”, what amounts?</label>
