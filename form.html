@@ -103,6 +103,57 @@
     .nav-buttons a:hover {
       background-color: #154080;
     }
+
+    .form-section {
+      margin: 20px auto;
+      max-width: 900px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section h3 {
+      margin-bottom: 15px;
+      color: #0d2d5a;
+    }
+
+    #coverageTable {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    #coverageTable th, #coverageTable td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #coverageTable th {
+      background: #0d2d5a;
+      color: white;
+    }
+
+    #coverageTable input {
+      width: 90%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #bbb;
+    }
+
+    #addRowBtn {
+      padding: 8px 16px;
+      background: #0d2d5a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #addRowBtn:hover {
+      background: #154080;
+    }
   </style>
 </head>
 <body>
@@ -116,128 +167,128 @@
   <form id="intakeForm">
     <h1>Business Insurance Application</h1>
     <h2>SECTION 1: GENERAL APPLICANT INFORMATION</h2>
-    <label for="name">1. Desired Policy Effective date (MM/DD/YYY)</label><br>
+    <label for="effective_date">1. Desired Policy Effective date (MM/DD/YYY)</label><br>
+    <input type="date" id="effective_date" name="effective_date" required><br><br>
+
+    <label for="company_name">2. Company Name</label><br>
+    <input type="text" id="company_name" name="company_name" required><br><br>
+
+    <label for="dba">3. DBA (if it differs from company name)</label><br>
+    <input id="text" id="dba" name="dba"><br><br>
+
+    <label for="mailing_address">4. Mailing Address</label><br>
+    <input type="text" id="mailing_address" name="mailing_address" required><br><br>
+
+    <label for="full_name">5. Contact First & Last Name</label><br>
     <input type="text" id="name" name="name" required><br><br>
 
-    <label for="email">2. Company Name</label><br>
+    <label for="phone_number">6. Telephone #</label><br>
+    <input type="text" id="phone_number" name="phone_number" required><br><br>
+
+    <label for="email">7. Email</label><br>
     <input type="text" id="email" name="email" required><br><br>
 
-    <label for="message">3. DBA (if it differs from company name)</label><br>
-    <input id="text" name="message"><br><br>
+    <label for="website_address">8. Website Address</label><br>
+    <input type="text" id="website_address" name="website_address" required><br><br>
 
-    <label for="name">4. Mailing Address</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="yib">9. Years in Business</label><br>
+    <input type="text" id="yib" name="yib" required><br><br>
 
-    <label for="email">5. Contact First & Last Name</label><br>
-    <input type="text" id="email" name="email" required><br><br>
+    <label for="tags">10. Total Annual Gross Sales</label><br>
+    <input type="text" id="tags" name="tags" required><br><br>
 
-    <label for="message">6. Telephone #</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="num_employees">11. Number of Employees</label><br>
+    <input type="text" id="num_employees" name="num_employees" required><br><br>
 
-    <label for="name">7. Email</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="email">8. Website Address</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="message">9. Years in Business</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="name">10. Total Annual Gross Sales</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="email">11. Number of Employees</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="message">12. Federal Employer Identification Number (FEIN)</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="fein">12. Federal Employer Identification Number (FEIN)</label><br>
+    <input type="text" id="fein" name="fein" required><br><br>
 
     <!-- Checkbox --> 
-    <label for="name">13. Proior Losses Past 3 Years</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="prior_loss">13. Proior Losses Past 3 Years</label><br>
+    <label><input type="radio" name="prior_loss" class="radio" value="Yes"/>Yes</label>
+    <label><input type="radio" name="prior_loss" class="radio" value="No"/>No</label><br>
 
     <!-- Indent -->
-    <label for="email">a. If Yes, please describe and include a loss run report</label><br>
-    <textarea id="message" name="message" rows="8" cols="80"></textarea><br><br>
+    <label for="loss_run">a. If Yes, please describe and include a loss run report</label><br>
+    <textarea id="loss_run" name="loss_run" rows="8" cols="80"></textarea><br><br>
 
-    <label for="message">14. Detailed Business Description:</label><br>
-    <textarea id="message" name="message" rows="8" cols="80"></textarea><br><br>
+    <label for="business_description">14. Detailed Business Description:</label><br>
+    <textarea id="business_description" name="business_description" rows="8" cols="80"></textarea><br><br>
 
     <h2>SECTION 2: PROPERTY INFORMATION</h2>
 
-    <label for="name">1. Business Address</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="business_address">1. Business Address</label><br>
+    <input type="text" id="business_address" name="business_address" required><br><br>
 
-    <label for="email">a. If more than one location, please list all below:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <label for="more_locations">a. If more than one location, please list all below:</label><br>
+    <input type="text" id="more_locations" name="more_locations" required><br><br>
 
     <!-- Dropdown -->
-    <label for="message">2. Location Operations</label><br>
-    <select name="myDropdownName" id="myDropdown">
-      <option value="option1">Office</option>
-      <option value="option2">Warehouse</option>
-      <option value="option3">Habitational</option>
-      <option value="option2">Retail</option>
-      <option value="option3">Other</option>
+    <label for="location_type">2. Location Operations</label><br>
+    <select name="location_type" id="location_type">
+      <option value="Office">Office</option>
+      <option value="Warehouse">Warehouse</option>
+      <option value="Habitational">Habitational</option>
+      <option value="Retail">Retail</option>
+      <option value="Other">Other</option>
     </select><br>
 
-    <label for="name">a. If other, describe</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="other_location_type">a. If other, describe</label><br>
+    <input type="text" id="other_location_type" name="other_location_type" required><br><br>
 
-    <label for="email">3. Year Building was Built</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <label for="year_built">3. Year Building was Built</label><br>
+    <input type="text" id="year_built" name="year_built" required><br><br>
 
-    <label for="message">4. What year were the following building updates made:</label><br>
+    <label>4. What year were the following building updates made:</label><br>
     <!-- Indent -->
-    <label for="message">a. Electrical</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br>
-    <label for="message">b. Heating</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br>
-    <label for="message">c. Roofing</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br>
-    <label for="message">d. Plubming</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label for="electrical">a. Electrical</label><br>
+    <input type="text" id="electrical" name="electrical" required><br>
+    <label for="heating">b. Heating</label><br>
+    <input type="text" id="heating" name="heating" required><br>
+    <label for="roofing">c. Roofing</label><br>
+    <input type="text" id="roofing" name="roofing" required><br>
+    <label for="plubming">d. Plubming</label><br>
+    <input type="text" id="plubming" name="plubming" required><br><br>
 
-    <label for="name">5. Square footage of space rented/owned</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="square_feet">5. Square footage of space rented/owned</label><br>
+    <input type="text" id="square_feet" name="square_feet" required><br><br>
 
     <!-- Checkbox -->
-    <label for="email">6. Do you own the building?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="own_building">6. Do you own the building?</label><br>
+    <label><input type="radio" name="own_building" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="own_building" class="radio" value="No"/>No</label><br>
 
-    <label for="message">7. Number of stories in the building</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <label for="num_floors">7. Number of stories in the building</label><br>
+    <input type="text" id="num_floors" name="num_floors" required><br><br>
 
     <!-- Dropdown -->
-    <label for="message">8. Building Construction</label><br>
-    <select name="myDropdownName" id="myDropdown">
-      <option value="option1">Frame</option>
-      <option value="option2">Brick/Joisted Masonry</option>
-      <option value="option3">Masonry Non-Combustible</option>
-      <option value="option2">Fire Resistive</option>
-      <option value="option3">Non-Combustible</option>
-      <option value="option3">Other</option>
+    <label for="building_construction">8. Building Construction</label><br>
+    <select name="building_construction" id="building_construction">
+      <option value="Frame">Frame</option>
+      <option value="Brick/Joisted Masonry">Brick/Joisted Masonry</option>
+      <option value="Masonry Non-Combustible">Masonry Non-Combustible</option>
+      <option value="Fire Resistive">Fire Resistive</option>
+      <option value="Non-Combustible">Non-Combustible</option>
+      <option value="Other">Other</option>
     </select><br>
 
-    <label for="name">a. If other:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="building_construction_other">a. If other:</label><br>
+    <input type="text" id="building_construction_other" name="building_construction_other" required><br><br>
 
     <!-- Checkbox -->
-    <label for="name">9. Does building have a sprinkler system?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br><br>
+    <label for="sprinkler_system">9. Does building have a sprinkler system?</label><br>
+    <label><input type="radio" name="sprinkler_system" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="sprinkler_system" class="radio" value="No"/>No</label><br><br>
 
-    <label for="email">10. Requested Insurance Limits for:</label><br>
-    <label for="email">a. Business Personal Property (Contents)</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="email">b. Tenants Improvements & Betterments*</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="email">c. Business Income & Extra Expense*</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="email">d. Other</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <label>10. Requested Insurance Limits for:</label><br>
+    <label for="requested_business_personal">a. Business Personal Property (Contents)</label><br>
+    <input type="text" id="requested_business_personal" name="requested_business_personal" required><br>
+    <label for="requested_tenants_improvements">b. Tenants Improvements & Betterments*</label><br>
+    <input type="text" id="requested_tenants_improvements" name="requested_tenants_improvements" required><br>
+    <label for="requested_business_income">c. Business Income & Extra Expense*</label><br>
+    <input type="text" id="requested_business_income" name="requested_business_income" required><br>
+    <label for="requested_other">d. Other</label><br>
+    <input type="text" id="requested_other" name="requested_other" required><br><br>
 
     <t>Tenants Improvements & Betterments – Fixtures, alterations, additions or installations made a permanent part of a building by and at the expense of the tenant.</t><br><br>
     <t>Business Income & Extra Expense – Business Income means coverage for Net Income and Continuing Normal Operating Expenses including payroll during an interruption of a business. Extra Expense means the necessary expenses that you incur during the period of restoration that you would not have incurred if there had not been direct physical loss or damage to your property.</t><br><br>
@@ -253,18 +304,18 @@
     <h3>Medical Expense (any one person) $5,000</h3><br>
 
     <!-- Checkbox -->
-    <label for="message">1. Do you require limits higher than shown above?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="need_higher_limits">1. Do you require limits higher than shown above?</label><br>
+    <label><input type="radio" name="need_higher_limits" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="need_higher_limits" class="radio" value="No"/>No</label><br>
 
     <!-- Indent -->
-    <label for="name">a. If yes, please advise desired limits:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="desired_limits">a. If yes, please advise desired limits:</label>
+    <input type="text" id="desired_limits" name="desired_limits" required><br><br>
 
     <!-- Checkbox -->
-    <label for="email">Do you offer employee benefits?</label>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="employee_benefits">Do you offer employee benefits?</label>
+    <label><input type="radio" name="employee_benefits" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="employee_benefits" class="radio" value="No"/>No</label><br>
 
     <h2>SECTION 4: AUTOMOTIVE LIABILITY INFORMATION</h2>
 
@@ -272,68 +323,104 @@
     <h3>Combined Single Limit (CSL) $1,000,000</h3><br>
 
     <!-- Checkbox -->
-    <label for="message">Hied & Non-Owned Auto</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="hired_nonowned_autos">Hired & Non-Owned Auto</label><br>
+    <label><input type="radio" name="hired_nonowned_autos" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="hired_nonowned_autos" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="message">Hired Auto Physical Damage</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="hired_auto_phicial_damage">Hired Auto Physical Damage</label><br>
+    <label><input type="radio" name="hired_auto_phicial_damage" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="hired_auto_phicial_damage" class="radio" value="No"/>No</label><br>
 
     <h3>Deductibles</h3>
     <h3>Comprehensive $500</h3>
     <h3>Collision $500</h3>
 
     <!-- Checkbox -->
-    <label for="name">1. Does your Company own any autos or trailers?</label>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="trailers">1. Does your Company own any autos or trailers?</label>
+    <label><input type="radio" name="trailers" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="trailers" class="radio" value="No"/>No</label><br>
 
-    <!-- Indent -->
-    <label for="email">a. If “yes”, please provide the below information</label><br>
-    <label for="email">Number of vehicles</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Year</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Make</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Model</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Vin</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">City, State Garaged</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Average Distance Driven</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Estimate Cost New</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <!-- <label for="email">a. If "yes", please provide the below information</label><br>
+
+    <div class="form-section">
+      <label for="email">Number of vehicles</label><br>
+      <table id="coverageTable">
+        <thead>
+          <tr>
+            <th>Vehicle Number</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Vin</th>
+            <th>City, State Garaged</th>
+            <th>Average Distance Driven</th>
+            <th>Estimate Cost New</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="number" name="Vehicle_num" placeholder="Vehicle #"></td>
+            <td><input type="text" name="year"></td>
+            <td><input type="text" name="make"></td>
+            <td><input type="text" name="model"></td>
+            <td><input type="text" name="vin"></td>
+            <td><input type="text" name="city_state"></td>
+            <td><input type="text" name="distance_driven"></td>
+            <td><input type="text" name="cost_new"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-container">
+        <button type="button" id="addRowBtn">+ Add Vehicle</button>
+      </div>
+    </div> -->
+
+    <!-- Needs rework -->
+    <label>a. If "yes", please provide the below information (seperate with commas)</label><br>
+    <label for="vehicle_num">Number of vehicles</label><br>
+    <input type="text" id="vehicle_num" name="vehicle_num" required><br>
+    <label for="year">Year</label><br>
+    <input type="text" id="year" name="year" required><br>
+    <label for="make">Make</label><br>
+    <input type="text" id="make" name="make" required><br>
+    <label for="model">Model</label><br>
+    <input type="text" id="model" name="model" required><br>
+    <label for="vin">Vin</label><br>
+    <input type="text" id="vin" name="vin" required><br>
+    <label for="city_state">City, State Garaged</label><br>
+    <input type="text" id="city_state" name="city_state" required><br>
+    <label for="distance_driven">Average Distance Driven</label><br>
+    <input type="text" id="distance_driven" name="distance_driven" required><br>
+    <label for="cost_new">Estimate Cost New</label><br>
+    <input type="text" id="cost_new" name="cost_new" required><br><br>
 
     <!-- Checkbox -->
-    <label for="message">2. Does your Company have any Drivers?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="drivers">2. Does your Company have any Drivers?</label><br>
+    <label><input type="radio" name="drivers" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="drivers" class="radio" value="No"/>No</label><br>
 
-    <label for="name">a. If “yes”, please provide the below information</label><br>
-    <label for="email">Number of Drivers</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">First Name</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Middle Initial</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Last Name</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Date of Birth</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Driverss License #</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">State</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <!-- Needs rework -->
+    <label>a. If "yes", please provide the below information</label><br>
+    <label for="num_drivers">Number of Drivers</label><br>
+    <input type="text" id="num_drivers" name="num_drivers" required><br>
+    <label for="driver_firstname">First Name/s</label><br>
+    <input type="text" id="driver_firstname" name="driver_firstname" required><br>
+    <label for="driver_mi">Middle Initial</label><br>
+    <input type="text" id="driver_mi" name="driver_mi" required><br>
+    <label for="driver_lastname">Last Name/s</label><br>
+    <input type="text" id="driver_lastname" name="driver_lastname" required><br>
+    <label for="driver_dob">Date of Birth</label><br>
+    <input type="text" id="driver_dob" name="driver_dob" required><br>
+    <label for="driver_dl">Driverss License #</label><br>
+    <input type="text" id="driver_dl" name="driver_dl" required><br>
+    <label for="driver_state">State</label><br>
+    <input type="text" id="driver_state" name="driver_state" required><br><br>
 
     <h2>SECTION 5: WORKERS’ COMPENSATION LIABILITY INFORMATION</h2><br>
 
-    <label for="email">Umployment Identification Number (UN, if applicable):</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <label for="un">Umployment Identification Number (UN, if applicable):</label><br>
+    <input type="text" id="un" name="un" required><br><br>
 
     <h3>Standard Coverages</h3>
     <h3>Workers’ Compensation - Statutory</h3><br>
@@ -362,67 +449,68 @@
     </table><br>
 
     <!-- Checkbox A/B-->
-    <label for="message">1. Select desired Workers’ Compensation limits</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Option A</label>
-    <label><input type="checkbox" class="radio" value="1"/>Option B</label><br>
+    <label for="desired_Workers_Compensation">1. Select desired Workers’ Compensation limits</label><br>
+    <label><input type="radio" name="desired_Workers_Compensation" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="desired_Workers_Compensation" class="radio" value="No"/>No</label><br>
 
-    <label for="name">Rating Information:</label><br>
-    <label for="email">State</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Classification (i.e. clerical, sales, etc).</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email"># Full Time Employees</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email"># Part Time Employees</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="email">Est. Annual Payroll</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <!-- Needs rework -->
+    <label>Rating Information:</label><br>
+    <label for="rating_state">State</label><br>
+    <input type="text" id="rating_state" name="rating_state" required><br>
+    <label for="classification">Classification (i.e. clerical, sales, etc).</label><br>
+    <input type="text" id="classification" name="classification" required><br>
+    <label for="rating_num_employees"># Full Time Employees</label><br>
+    <input type="text" id="rating_num_employees" name="rating_num_employees" required><br>
+    <label for="num_part_time"># Part Time Employees</label><br>
+    <input type="text" id="num_part_time" name="num_part_time" required><br>
+    <label for="annual_payroll">Est. Annual Payroll</label><br>
+    <input type="text" id="annual_payroll" name="annual_payroll" required><br><br>
 
-    <label for="message">2. What is your current Workers’ Compensation effective date and Limit?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br>
-
-    <!-- Checkbox -->
-    <label for="name">3. Do you lease any employees?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="current_compensation">2. What is your current Workers’ Compensation effective date and Limit?</label><br>
+    <input type="text" id="current_compensation" name="current_compensation" required><br><br>
 
     <!-- Checkbox -->
-    <label for="email">4. Do you lease employees to other employers?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="lease_employees">3. Do you lease any employees?</label><br>
+    <label><input type="radio" name="lease_employees" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="lease_employees" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="message">5. Are any employees leased from a PEO (Professional Employment Organization)?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="lease_to_others">4. Do you lease employees to other employers?</label><br>
+    <label><input type="radio" name="lease_to_others" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="lease_to_others" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="name">6. Does the company have any seasonal/temporary employees?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="leased_from_peo">5. Are any employees leased from a PEO (Professional Employment Organization)?</label><br>
+    <label><input type="radio" name="leased_from_peo" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="leased_from_peo" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="email">7. Do employees ever travel outside of the United States or its territories for work?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="temp_employees">6. Does the company have any seasonal/temporary employees?</label><br>
+    <label><input type="radio" name="temp_employees" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="temp_employees" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="message">8. Have you had any prior Workers’ Compensation losses?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="travel_outside_us">7. Do employees ever travel outside of the United States or its territories for work?</label><br>
+    <label><input type="radio" name="travel_outside_us" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="travel_outside_us" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="name">9. Has the company had any prior coverage cancelled or non-renewed in the past 5 years?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="workers_comp_losses">8. Have you had any prior Workers’ Compensation losses?</label><br>
+    <label><input type="radio" name="workers_comp_losses" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="workers_comp_losses" class="radio" value="No"/>No</label><br>
 
     <!-- Checkbox -->
-    <label for="email">10. As owner/officer in your LLC/Corporation, do you wish to be included for coverage in this new Workers’ Compensation policy?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br>
+    <label for="coverage_cancelled">9. Has the company had any prior coverage cancelled or non-renewed in the past 5 years?</label><br>
+    <label><input type="radio" name="coverage_cancelled" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="coverage_cancelled" class="radio" value="No"/>No</label><br>
 
-    <label for="message">11. What is your current experience modification factor if applicable?</label><br>
-    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+    <!-- Checkbox -->
+    <label for="new_workers_compensation">10. As owner/officer in your LLC/Corporation, do you wish to be included for coverage in this new Workers’ Compensation policy?</label><br>
+    <label><input type="radio" name="new_workers_compensation" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="new_workers_compensation" class="radio" value="No"/>No</label><br>
+
+    <label for="modification_factor">11. What is your current experience modification factor if applicable?</label><br>
+    <input type="text" id="modification_factor" name="modification_factor" required><br><br>
 
     <h2>SECTION 6: UMBRELLA LIABILITY INFORMATION</h2>
     
@@ -431,24 +519,24 @@
     <h3>Self-Insured Retention $10,000</h3>
 
     <!-- Checkbox -->
-    <label for="message">1. Do you require Umbrella Liability that differs from the above Limits?</label><br>
-    <label><input type="checkbox" class="radio" value="1"/>Yes</label>
-    <label><input type="checkbox" class="radio" value="1"/>No</label><br><br>
+    <label for="umbrella_liability">1. Do you require Umbrella Liability that differs from the above Limits?</label><br>
+    <label><input type="radio" name="umbrella_liability" class="radio" value="Yes">Yes</label>
+    <label><input type="radio" name="umbrella_liability" class="radio" value="No"/>No</label><br><br>
 
     <!-- Indent -->
-    <label for="name">a. If “yes”, what amounts?</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="umbrella_liability_amount">a. If “yes”, what amounts?</label><br>
+    <input type="text" id="umbrella_liability_amount" name="umbrella_liability_amount" required><br><br>
 
     <t>By filling out and clicking submit you agree to .....</t><br><br>
 
-    <label for="email">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="sign_name">Name:</label><br>
+    <input type="text" id="sign_name" name="sign_name" required><br><br>
 
-    <label for="message">Title:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" required><br><br>
 
-    <label for="name">Date:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="signed_date">Date:</label><br>
+    <input type="date" id="signed_date" name="signed_date" required><br><br>
 
     <div class="button-container">
       <button type="submit">Submit</button>
@@ -462,9 +550,84 @@
       event.preventDefault();
 
       const formData = {
-        name: document.getElementById("name").value,
+        effective_date: document.getElementById("effective_date").value,
+        company_name: document.getElementById("company_name").value,
+        dba: document.getElementById("dba").value,
+        mailing_address: document.getElementById("mailing_address").value,
+        full_name: document.getElementById("full_name").value,
+        phone_number: document.getElementById("phone_number").value,
         email: document.getElementById("email").value,
-        message: document.getElementById("message").value
+        website_address: document.getElementById("website_address").value,
+        yib: document.getElementById("yib").value,
+        tags: document.getElementById("tags").value,
+        num_employees: document.getElementById("num_employees").value,
+        fein: document.getElementById("fein").value,
+        prior_loss: document.getElementById("prior_loss").value,
+        loss_run: document.getElementById("loss_run").value,
+        business_description: document.getElementById("business_description").value,
+        business_address: document.getElementById("business_address").value,
+        more_locations: document.getElementById("more_locations").value,
+        location_type: document.getElementById("location_type").value,
+        other_location_type: document.getElementById("other_location_type").value,
+        year_built: document.getElementById("year_built").value,
+        electrical: document.getElementById("electrical").value,
+        heating: document.getElementById("heating").value,
+        roofing: document.getElementById("roofing").value,
+        plubming: document.getElementById("plubming").value,
+        square_feet: document.getElementById("square_feet").value,
+        own_building: document.getElementById("own_building").value,
+        num_floors: document.getElementById("num_floors").value,
+        building_construction: document.getElementById("building_construction").value,
+        building_construction_other: document.getElementById("building_construction_other").value,
+        sprinkler_system: document.getElementById("sprinkler_system").value,
+        requested_business_personal: document.getElementById("requested_business_personal").value,
+        requested_tenants_improvements: document.getElementById("requested_tenants_improvements").value,
+        requested_business_income: document.getElementById("requested_business_income").value,
+        requested_other: document.getElementById("requested_other").value,
+        need_higher_limits: document.getElementById("need_higher_limits").value,
+        desired_limits: document.getElementById("desired_limits").value,
+        employee_benefits: document.getElementById("employee_benefits").value,
+        hired_nonowned_autos: document.getElementById("hired_nonowned_autos").value,
+        hired_auto_phicial_damage: document.getElementById("hired_auto_phicial_damage").value,
+        trailers: document.getElementById("trailers").value,
+        vehicle_num: document.getElementById("vehicle_num").value,
+        year: document.getElementById("year").value,
+        make: document.getElementById("make").value,
+        model: document.getElementById("model").value,
+        vin: document.getElementById("vin").value,
+        city_state: document.getElementById("city_state").value,
+        distance_driven: document.getElementById("distance_driven").value,
+        cost_new: document.getElementById("cost_new").value,
+        drivers: document.getElementById("drivers").value,
+        num_drivers: document.getElementById("drivers").value,
+        driver_firstname: document.getElementById("drivers").value,
+        driver_mi: document.getElementById("drivers").value,
+        driver_lastname: document.getElementById("drivers").value,
+        driver_dob: document.getElementById("drivers").value,
+        driver_dl: document.getElementById("drivers").value,
+        driver_state: document.getElementById("drivers").value,
+        un: document.getElementById("un").value,
+        desired_Workers_Compensation: document.getElementById("desired_Workers_Compensation").value,
+        rating_state: document.getElementById("rating_state").value,
+        classification: document.getElementById("classification").value,
+        rating_num_employees: document.getElementById("rating_num_employees").value,
+        num_part_time: document.getElementById("num_part_time").value,
+        annual_payroll: document.getElementById("annual_payroll").value,
+        current_compensation: document.getElementById("current_compensation").value,
+        lease_employees: document.getElementById("lease_employees").value,
+        lease_to_others: document.getElementById("lease_to_others").value,
+        leased_from_peo: document.getElementById("leased_from_peo").value,
+        temp_employees: document.getElementById("temp_employees").value,
+        travel_outside_us: document.getElementById("travel_outside_us").value,
+        workers_comp_losses: document.getElementById("workers_comp_losses").value,
+        coverage_cancelled: document.getElementById("coverage_cancelled").value,
+        new_workers_compensation: document.getElementById("new_workers_compensation").value,
+        modification_factor: document.getElementById("modification_factor").value,
+        umbrella_liability: document.getElementById("umbrella_liability").value,
+        umbrella_liability_amount: document.getElementById("umbrella_liability_amount").value,
+        sign_name: document.getElementById("sign_name").value,
+        title: document.getElementById("title").value,
+        signed_date: document.getElementById("signed_date").value
       };
 
       try {
@@ -480,10 +643,39 @@
         document.getElementById("response").innerText = "Error submitting form.";
       }
     });
+
+    // document.getElementById("addRowBtn").addEventListener("click", function () {
+    //   const table = document.getElementById("coverageTable").querySelector("tbody");
+    //   const rowCount = table.rows.length + 1;
+
+    //   // Create new row
+    //   const newRow = table.insertRow();
+
+    //   // Column 1: Option label _${rowCount}
+    //   const cell1 = newRow.insertCell(0);
+    //   cell1.innerHTML = `<input type="number" name="Vehicle_num_${rowCount}" placeholder="Vehicle #">`;
+    //   // Column 2: Radio input
+    //   const cell2 = newRow.insertCell(1);
+    //   cell2.innerHTML = `<input type="text" name="year_${rowCount}">`;
+    //   // Column 3: Limit input
+    //   const cell3 = newRow.insertCell(2);
+    //   cell3.innerHTML = `<input type="text" name="make_${rowCount}">`;
+    //   // Column 4: Notes input
+    //   const cell4 = newRow.insertCell(3);
+    //   cell4.innerHTML = `<input type="text" name="model_${rowCount}">`;
+    //   // Column 5: Option label
+    //   const cell5 = newRow.insertCell(3);
+    //   cell1.innerHTML = `<input type="text" name="vin_${rowCount}">`;
+    //   // Column 6: Radio input
+    //   const cell6 = newRow.insertCell(5);
+    //   cell2.innerHTML = `<input type="text" name="city_state_${rowCount}">`;
+    //   // Column 7: Limit input
+    //   const cell7 = newRow.insertCell(6);
+    //   cell3.innerHTML = `<input type="text" name="distance_driven_${rowCount}">`;
+    //   // Column 8: Notes input
+    //   const cell8 = newRow.insertCell(7);
+    //   cell4.innerHTML = `<input type="text" name="cost_new_${rowCount}">`;
+    // });
   </script>
 </body>
 </html>
-
-
-
-
